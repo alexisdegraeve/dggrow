@@ -13,11 +13,16 @@ export class SalesComponent implements OnInit {
 
   sortedData : Product[] = [];
   directData: Boolean[] = [];
+  searchTxt = '';
 
   constructor(private potatoService: PotatoService) {}
 
   ngOnInit(): void {
-    this.sortedData = this.getProduct();
+   this.resetData();
+  }
+
+  resetData() {
+    this.sortedData = [... this.getProduct()];
   }
 
   getColumnProduct(): Column[] {
@@ -55,6 +60,21 @@ export class SalesComponent implements OnInit {
       return 0;
     })
   return sortedArray;
-}
+  }
+
+  searchSales(){
+    console.log(this.searchTxt);
+    if(this.searchTxt !=="") {
+       this.sortedData = this.getProduct().filter((item: Product) => item.productName.toLowerCase().includes(this.searchTxt.toLowerCase()));  
+    } else {
+      this.resetData();
+    }
+  }
+
+  resetSearch() {
+    this.searchTxt ='';
+    this.resetData();
+  }
 
 }
+
