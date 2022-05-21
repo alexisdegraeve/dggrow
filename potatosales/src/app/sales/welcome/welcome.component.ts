@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PotatoService } from 'src/app/psservice/potato.service';
 
 @Component({
   selector: 'ps-welcome',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(potatService: PotatoService) { }
 
   ngOnInit(): void {
   }

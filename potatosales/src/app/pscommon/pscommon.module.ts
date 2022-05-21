@@ -7,6 +7,7 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { PotatoService } from '../psservice/potato.service';
 
 
 
@@ -23,9 +24,13 @@ import { FormsModule } from '@angular/forms';
     FormsModule,
     RouterModule
   ],
+  providers: [
+    PotatoService
+  ],
   exports: [
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CommonModule
   ]
 })
 export class PscommonModule { }
