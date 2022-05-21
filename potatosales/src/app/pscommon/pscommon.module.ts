@@ -32,6 +32,7 @@ import { PotatoService } from '../psservice/potato.service';
     HeaderComponent,
     FooterComponent,
     CommonModule,
+    FormsModule,
     RouterModule
   ]
 })
