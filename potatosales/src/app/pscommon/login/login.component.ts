@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { LoginService } from 'src/app/psservice/login.service';
 
 @Component({
@@ -10,13 +11,16 @@ export class LoginComponent implements OnInit {
   password = '';
   loginTxt = '';
 
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    console.log('check loggin :' ,this.loginService.checkLogin(this.loginTxt, this.password));
-    console.log('Login');
+    if(this.loginService.checkAccess(this.loginTxt, this.password)) {
+      console.log('Login');      
+      this.router.navigate(['/welcome']);
+    }
+
   }
 }

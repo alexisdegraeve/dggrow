@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/psservice/login.service';
 
 @Component({
   selector: 'ps-header',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private loginService:LoginService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+
+  signout() {
+    this. loginService.resetUser();
+    this.router.navigate(['/login']);
+  }
 }

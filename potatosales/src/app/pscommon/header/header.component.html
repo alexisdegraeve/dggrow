@@ -17,9 +17,25 @@
                     <a class="nav-link active" aria-current="page" [routerLink]="['/welcome']">Prix</a>
                 </li>
             </ul>
-            <span class="navbar-text">
-            DG GROW
-        </span>
+            <span class="navbar-text me-4 text-white">
+                DG GROW
+            </span>
+            <ul class="navbar-nav  mb-2 mb-lg-0 ">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle link-light" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                          </svg>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end p-4" aria-labelledby="navbarDropdown" style="width: 200px">
+                        <li>Welcome <b>Dear User</b></li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li><a type="button" class="dropdown-item" (click)="signout()">Sign out</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
