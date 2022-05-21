@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { PscommonModule } from '../pscommon/pscommon.module';
 
 
 
@@ -9,7 +9,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     WelcomeComponent
   ],
   imports: [
-    CommonModule
+    PscommonModule
   ]
 })
 export class SalesModule { }
