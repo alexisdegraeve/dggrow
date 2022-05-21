@@ -30,7 +30,6 @@ export class SalesComponent implements OnInit {
   }
 
   getProduct(): Product[] {
-    //console.log('Columns ',this.potatoService.getColumnData());
     return this.potatoService.getColumnData();
   }
 
@@ -41,10 +40,7 @@ export class SalesComponent implements OnInit {
 
   sort(ind: number, column?: string) {
     this.directData[ind] =  this.directData[ind] ? !this.directData[ind] : true;
-    console.log(this.directData[ind]);
-    console.log(this.directData);
     if(column) {
-      console.log(column);
       this.sortedData = [...this.sortByColumn(this.sortedData, column, this.directData[ind] ? 'asc': 'desc')];
     }
   }
@@ -63,7 +59,6 @@ export class SalesComponent implements OnInit {
   }
 
   searchSales(){
-    console.log(this.searchTxt);
     if(this.searchTxt !=="") {
        this.sortedData = this.getProduct().filter((item: Product) => item.productName.toLowerCase().includes(this.searchTxt.toLowerCase()));  
     } else {

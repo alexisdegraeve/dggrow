@@ -20,8 +20,6 @@ export class LoginService {
     let potatoUser = localStorage.getItem('potatoUser');    
     if(potatoUser) {
       let user = JSON.parse(potatoUser);
-      console.log(user);
-      console.log(user.login == "potato" && user.pwd =="1234");
       return (user.login == 'potato' && user.pwd =='1234');
     }
     return false;

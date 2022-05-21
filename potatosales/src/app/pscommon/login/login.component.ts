@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
 
   checkLogin() {
     if(this.loginService.checkAccess(this.loginTxt, this.passwordTxt)) {
-      console.log('Login');      
       this.router.navigate(['/welcome']);
     } else {
       this.errorLogin = true;
