@@ -6,7 +6,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PotatoService } from '../psservice/potato.service';
 
 
@@ -22,7 +22,8 @@ import { PotatoService } from '../psservice/potato.service';
     CommonModule,
     BrowserModule,
     FormsModule,
-    RouterModule
+    RouterModule,
+    
   ],
   providers: [
     PotatoService

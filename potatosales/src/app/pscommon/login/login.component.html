@@ -13,19 +13,46 @@
                           </svg>
                     </div>
 
+                    <div class="alert alert-danger" role="alert" *ngIf="errorLogin">
+                        Your login is incorrect. Check your login and password.
+                    </div>
+
+                    <ul class="alert alert-warning" *ngIf="login.invalid && (login.dirty || login.touched)">
+                        <li [ngClass]="login.errors?.['required'] ? 'd-block': 'd-none'">
+                            Login is required.
+                        </li>
+                        <li [ngClass]="login.errors?.['minlength'] ? 'd-block': 'd-none'">
+                            Login must be at least 2 characters long.
+                        </li>
+                    </ul>
+
+                    <ul class="alert alert-warning" *ngIf="password.invalid && (password.dirty || password.touched)">
+                        <li [ngClass]="password.errors?.['required'] ? 'd-block': 'd-none'">
+                            Password is required.
+                        </li>
+                        <li [ngClass]="password.errors?.['minlength'] ? 'd-block': 'd-none'">
+                            Password must be at least 4 characters long.
+                        </li>
+                    </ul>
+
+
                     <!-- Email input -->
                     <div class="form-outline mb-4">
-                        <input type="text" name="login" class="form-control form-control-lg" placeholder="Login" [(ngModel)]="loginTxt" />
+                        <input type="text" id="login" name="login" required minlength="2" class="form-control form-control-lg" placeholder="Login" [(ngModel)]="loginTxt" #login="ngModel" (ngModelChange)="resetError()" />
                     </div>
+
 
                     <!-- Password input -->
                     <div class="form-outline mb-3">
-                        <input type="password" name="password" class="form-control form-control-lg" placeholder="Password" [(ngModel)]="password" />
+                        <input type="password" id="password" name="password" required minlength="4" class="form-control form-control-lg" placeholder="Password" [(ngModel)]="passwordTxt" #password="ngModel" (ngModelChange)="resetError()" />
                     </div>
 
                     <div class="text-center text-lg-start mt-4 pt-2">
-                        <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="login()">Login</button>
+                        <button type="button" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;" (click)="checkLogin()">Login</button>
                     </div>
+
+
+
 
                 </form>
             </div>

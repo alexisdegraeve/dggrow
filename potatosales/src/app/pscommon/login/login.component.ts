@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/psservice/login.service';
 
@@ -8,19 +9,30 @@ import { LoginService } from 'src/app/psservice/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  password = '';
+  passwordTxt = '';
   loginTxt = '';
+  errorLogin = false;
 
-  constructor(private loginService: LoginService, private router: Router) { }
-
-  ngOnInit(): void {
+  constructor(private loginService: LoginService, private router: Router) { 
   }
 
-  login() {
-    if(this.loginService.checkAccess(this.loginTxt, this.password)) {
+  ngOnInit(): void {
+
+  }
+
+  checkLogin() {
+    if(this.loginService.checkAccess(this.loginTxt, this.passwordTxt)) {
       console.log('Login');      
       this.router.navigate(['/welcome']);
+    } else {
+      this.errorLogin = true;
     }
 
   }
+
+  resetError() {
+    this.errorLogin =false;
+  }
+
+  
 }
