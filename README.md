@@ -9,3 +9,7 @@ After to install the packages:
 
 And run the server:
 > npm start
+
+to login to the application you can use:
+> login: potato
+> pwd: 1234
