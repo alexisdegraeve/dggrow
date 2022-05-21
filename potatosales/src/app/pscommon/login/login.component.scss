@@ -1,0 +1,29 @@
+.img-potato {
+    width: 80%;
+}
+
+.ps-title {
+    color: #e28640;
+    font-size: 18px;
+}
+
+.divider:after,
+.divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+}
+
+.h-custom {
+    height: calc(100% - 73px);
+}
+
+@media (max-width: 980px) {
+    .h-custom {
+        height: 100%;
+    }
+    .img-potato {
+        width: 40%;
+    }
+}
