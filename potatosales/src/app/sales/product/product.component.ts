@@ -24,19 +24,19 @@ export class ProductComponent implements OnInit {
     this.saveWarning = false;
   }
 
-  resetNewProduct(loginForm: NgForm) {
+  resetNewProduct(productForm: NgForm) {
     this.product = {productName: '', productID: 0, productManager: '', startDate:new Date()};
-    loginForm.resetForm();        
+    productForm.resetForm();        
   }
 
-  saveNewProduct(loginForm: NgForm) {
-    if(!loginForm.form.valid) {
+  saveNewProduct(productForm: NgForm) {
+    if(!productForm.form.valid) {
       this.saveWarning = true;
     }else {
       this.potatoService.addPotato(this.product);
-      loginForm.form.markAsUntouched;
+      productForm.form.markAsUntouched;
       this.saveOK = true;
-      this.resetNewProduct(loginForm);
+      this.resetNewProduct(productForm);
     
     }
     
