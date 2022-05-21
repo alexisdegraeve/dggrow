@@ -1,14 +1,16 @@
 import { NgModule } from '@angular/core';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { PscommonModule } from '../pscommon/pscommon.module';
-import { PotatoTableComponent } from './potato-table/potato-table.component';
+import { ProductComponent } from './product/product.component';
+import { SalesComponent } from './sales/sales.component';
 
 
 
 @NgModule({
   declarations: [
     WelcomeComponent,
-    PotatoTableComponent
+    ProductComponent,
+    SalesComponent
   ],
   imports: [
     PscommonModule

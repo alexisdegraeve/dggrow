@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -31,7 +31,8 @@ import { PotatoService } from '../psservice/potato.service';
   exports: [
     HeaderComponent,
     FooterComponent,
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class PscommonModule { }

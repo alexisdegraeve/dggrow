@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { PotatoService } from 'src/app/psservice/potato.service';
 
 @Component({
-  selector: 'ps-potato-table',
-  templateUrl: './potato-table.component.html',
-  styleUrls: ['./potato-table.component.scss']
+  selector: 'ps-product',
+  templateUrl: './product.component.html',
+  styleUrls: ['./product.component.scss']
 })
-export class PotatoTableComponent implements OnInit {
+export class ProductComponent implements OnInit {
 
   constructor(private potatoService: PotatoService) {}
 

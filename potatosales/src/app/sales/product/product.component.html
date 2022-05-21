@@ -1,0 +1,39 @@
+<ps-header></ps-header>
+
+<h1 class="mt-4 ps-4">New Product</h1>
+<hr class="mb-4" />
+<div class="container">
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col" *ngFor="let item of getPotatoesColumn()"> {{ item?.header }}
+                    <div *ngIf="item?.subHeaders" class="d-flex">
+                        <div *ngFor="let subHeader of item?.subHeaders" class="me-2">
+                            {{ subHeader.header }}
+                        </div>
+                    </div>
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of getPotatoesData()">
+                <td> {{ item?.productID }} </td>
+                <td> {{ item?.productName }} </td>
+                <td>
+                    <div class="d-flex">
+                        <div class="me-2">{{ item?.salesQ1}}</div>
+                        <div class="me-2">{{ item?.salesQ2}}</div>
+                        <div class="me-2">{{ item?.salesQ3}}</div>
+                        <div class="me-2">{{ item?.salesQ4}}</div>
+                    </div>
+                </td>
+                <td>
+                    {{ getTotal(item) }}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<ps-footer></ps-footer>
