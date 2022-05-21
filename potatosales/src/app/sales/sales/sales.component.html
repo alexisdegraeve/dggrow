@@ -10,7 +10,7 @@
     <table class="table table-dark table-striped">
         <thead>
             <tr>
-                <th scope="col" *ngFor="let item of getPotatoesColumn()"> {{ item?.header }}
+                <th scope="col" *ngFor="let item of getColumnProduct()"> {{ item?.header }}
                     <ng-container *ngIf="item?.subHeaders">
                         <table class="m-0 table table-dark">
                             <thead>
@@ -25,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let item of getPotatoesData()">
+            <tr *ngFor="let item of getProduct()">
                 <td> {{ item?.productID }} </td>
                 <td> {{ item?.productName }} </td>
                 <td>
